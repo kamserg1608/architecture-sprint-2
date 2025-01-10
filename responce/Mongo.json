@@ -1,0 +1,32 @@
+{
+    "mongo_topology_type": "Sharded",
+    "mongo_replicaset_name": null,
+    "mongo_db": "somedb",
+    "read_preference": "Primary()",
+    "mongo_nodes": [
+        [
+            "mongos_router",
+            27024
+        ]
+    ],
+    "mongo_primary_host": null,
+    "mongo_secondary_hosts": [
+    ],
+    "mongo_address": [
+        "mongos_router",
+        27024
+    ],
+    "mongo_is_primary": true,
+    "mongo_is_mongos": true,
+    "collections": {
+        "helloDoc": {
+            "documents_count": 1000
+        }
+    },
+    "shards": {
+        "shard1ReplicaSet": "shard1ReplicaSet/shard1-1-secondary:27019,shard1-2-secondary:27020,shard1-primary:27018",
+        "shard2ReplicaSet": "shard2ReplicaSet/shard2-1-secondary:27022,shard2-2-secondary:27023,shard2-primary:27021"
+    },
+    "cache_enabled": false,
+    "status": "OK"
+}

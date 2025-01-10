@@ -1,18 +1,49 @@
 # pymongo-api
 
+## Итоговая структура приложения
+
+![FinalScheme.svg](diagrams%2FFinalScheme.svg)
+
 ## Как запустить
 
-Запускаем mongodb и приложение
-
+1) Перейдем в основную папку 
+```shell
+cd sharding-repl-cache
+```
+2) Запустим docker-compose
 ```shell
 docker compose up -d
 ```
+или воспользуйтесь файлом
 
-Заполняем mongodb данными
+[1_start-docker-compose.sh](sharding-repl-cache%2Fscripts%2F1_start-docker-compose.sh)
 
+или запустить из intellij IDEA
+
+![startDockerCompose.png](images%2FstartDockerCompose.png)
+
+P.S. Для проверки контейнеров
+воспользоваться командой
 ```shell
-./scripts/mongo-init.sh
+docker compose ps
 ```
+или зайти в docker desktop
+
+![dockerDesktop.png](images%2FdockerDesktop.png)
+
+3) Запустим настройку mongo кластера
+ 
+[2_sharding-repl-cache-init.sh](sharding-repl-cache%2Fscripts%2F2_sharding-repl-cache-init.sh)
+
+Проверить корректность выполнения настройки шардирования и репликации по url
+
+http://localhost:8080/
+
+[Mongo.json](responce%2FMongo.json)
+
+4) Запустим настройку redis кластера, если это необходимо
+
+[3_crate-redis-cluster-configuration.sh](sharding-repl-cache%2Fscripts%2F3_crate-redis-cluster-configuration.sh)
 
 ## Как проверить
 
